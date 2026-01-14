@@ -1,10 +1,13 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
+import { logger } from "hono/logger"; // <--- Импорт логгера
 import { auth } from "./lib/auth";
 import { sessionMiddleware, Env } from "./middleware/auth";
 
 
 const app = new Hono<Env>();
+app.use(logger());
+
 
 console.log(process.env.FRONTEND_URL);
 
