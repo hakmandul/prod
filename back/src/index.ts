@@ -6,6 +6,9 @@ import { sessionMiddleware, Env } from "./middleware/auth";
 
 const app = new Hono<Env>();
 
+console.log(process.env.FRONTEND_URL);
+
+
 // 1. CORS — Самое важное для связи Фронт <-> Бэк
 app.use(
     "/api/*",
